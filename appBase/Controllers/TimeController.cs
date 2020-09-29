@@ -20,6 +20,8 @@ namespace appBase.Controllers
             catch (Exception ex)
             {
                 return "ERROR" + ex.Message;
+
+
             }
         }
         [HttpPost]
