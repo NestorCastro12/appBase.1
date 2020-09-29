@@ -1,0 +1,40 @@
+﻿@model AppBase.Models.User
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<section class="login_content">
+    <form action="Editar" method="post">
+        <h1>Modificar Cuenta</h1>
+        @Html.HiddenFor(Model => Model.id)
+        <div>
+            <input type="text" class="form-control" placeholder="Nombre" value=@Model.nombre name="Nombre" required="" />
+        </div>
+        <div>
+            <input type="email" class="form-control" placeholder="Correo" value=@Model.correo name="Correo" required="" />
+        </div>
+        <div>
+            <input type="text" class="form-control" placeholder="Tipo de documento" value=@Model.tipoDocumento name="TipoDocumento" required="" />
+        </div>
+        <div>
+            <input type="text" class="form-control" placeholder="Numero de documento" value=@Model.numeroDocumento name="NumeroDocumento" required="" />
+        </div>
+
+        <div>
+            <input type="text" class="form-control" placeholder="Rol" value=@Model.rol name="rol" required="" />
+        </div>
+        <div>
+            <input type="submit" value="Guardar" class="btn btn-round btn-secondary" />
+        </div>
+
+        <br />
+
+        <div>
+            <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+            <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+        </div>
+        </div>
+    </form>
+</section>
