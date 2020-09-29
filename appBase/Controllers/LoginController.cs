@@ -49,7 +49,8 @@ namespace AppBase.Controllers
                 }
             }catch(Exception ex)
             {
-                throw new Exception(ex.Message);
+                Console.WriteLine(ex.Message);
+                return Redirect("~/Login/Index#signup");
             }
 
             return View();
@@ -70,7 +71,8 @@ namespace AppBase.Controllers
             }
             catch(Exception ex)
             {
-                throw new Exception(ex.Message);
+                Console.WriteLine(ex.Message);
+                return Redirect("~/Login/Index");
             }
         }
 

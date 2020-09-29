@@ -118,8 +118,8 @@ namespace AppBase.Controllers
             }
             catch(Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return Redirect("~/Home/tableUser");
-                throw new Exception(ex.Message);
             }
             return Redirect("~/Home/tableUser");
         }
