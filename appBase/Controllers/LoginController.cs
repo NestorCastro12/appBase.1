@@ -42,6 +42,7 @@ namespace AppBase.Controllers
                         usr.NumeroDocumento = user.numeroDocumento;
 
                         db.Usuarios.Add(usr);
+
                         db.SaveChanges();
                     }
 
