@@ -9,6 +9,7 @@
     <form action="Editar" method="post">
         <h1>Modificar Cuenta</h1>
         @Html.HiddenFor(Model => Model.id)
+        @Html.HiddenFor(Model => Model.password)
         <div>
             <input type="text" class="form-control" placeholder="Nombre" value=@Model.nombre name="Nombre" required="" />
         </div>

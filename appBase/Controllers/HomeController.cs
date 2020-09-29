@@ -86,11 +86,9 @@ namespace AppBase.Controllers
                     usr.Nombre = user.nombre;
                     usr.Correo = user.correo;
                     usr.Rol = "Estudiante";
-                    usr.Password = user.password;
                     usr.TipoDocumento = user.tipoDocumento;
                     usr.NumeroDocumento = user.numeroDocumento;
                     usr.Rol = user.rol;
-
                     db.Entry(usr).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
 
@@ -100,7 +98,8 @@ namespace AppBase.Controllers
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                Console.WriteLine(ex.Message);
+                return Redirect("~/Home/Edit");
             }
 
         }
