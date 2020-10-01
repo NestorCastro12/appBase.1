@@ -310,7 +310,6 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\_LayoutUser.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Time\View_Hora.cshtml" />
   </ItemGroup>

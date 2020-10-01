@@ -33,21 +33,26 @@ namespace AppBase.Controllers
         {
             var listUsers = new ListUserView();
             listUsers.listUser = new List<User>();
-
-            using(appBaseEntities db = new appBaseEntities())
-            {
-                foreach (var a in db.Usuarios)
+            try {
+                using (appBaseEntities db = new appBaseEntities())
                 {
-                    listUsers.listUser.Add(new User
+                    foreach (var a in db.Usuarios)
                     {
-                        id = a.ID,
-                        nombre = a.Nombre,
-                        correo = a.Correo,
-                        tipoDocumento = a.TipoDocumento,
-                        numeroDocumento = a.NumeroDocumento,
-                        rol = a.Rol
-                    });
+                        listUsers.listUser.Add(new User
+                        {
+                            id = a.ID,
+                            nombre = a.Nombre,
+                            correo = a.Correo,
+                            tipoDocumento = a.TipoDocumento,
+                            numeroDocumento = a.NumeroDocumento,
+                            rol = a.Rol
+                        });
+                    }
                 }
+
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
 
             return View(listUsers);
@@ -71,8 +76,8 @@ namespace AppBase.Controllers
 
             }catch(Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return Redirect("~/Home/tableUser");
-                throw new Exception(ex.Message);
             }
         }
         [HttpPost]
