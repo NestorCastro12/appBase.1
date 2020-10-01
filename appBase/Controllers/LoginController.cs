@@ -75,12 +75,6 @@ namespace AppBase.Controllers
                 return Redirect("~/Login/Index");
             }
         }
-
-
-
-
-
-
     }
 
 
